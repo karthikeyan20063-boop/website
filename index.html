@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Veerabhadra Decors | Premium Painting Contractor Chennai</title>
+    <meta name="description" content="Sri Veerabhadra Decors, led by S. Suresh, offers professional painting, texture, interior, waterproofing and civil works in Chennai with 30+ years of experience and 450+ completed projects.">
+    <meta name="keywords" content="Painting Contractor Chennai, House Painting Chennai, Interior Painting Chennai, Exterior Painting Chennai, Wall Texture Chennai, Waterproofing Chennai, Painting Contractor Kolathur, Sri Veerabhadra Decors, S Suresh Painting Contractor">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#050505',
+                        darkCard: '#0a0a0a',
+                        darkElevated: '#121212',
+                        gold: '#D4AF37',
+                        goldLight: '#F3E5AB',
+                        goldDark: '#997A15',
+                        warmIvory: '#F9F8F6',
+                        charcoal: '#1A1A1A',
+                        darkBronze: '#2C251E'
+                    },
+                    fontFamily: {
+                        editorial: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
+                        sans: ['"DM Sans"', '"Inter"', 'sans-serif'],
+                        signature: ['"Great Vibes"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- GSAP & Three.js CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Sri Veerabhadra Decors",
+      "image": "logo.png",
+      "@id": "",
+      "url": "",
+      "telephone": "+919840075932",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "#2/46, 13th Cross Street, Senthil Nagar, II Main Road, Kolathur",
+        "addressLocality": "Chennai",
+        "postalCode": "600099",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.1226,
+        "longitude": 80.2013
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "S. Suresh"
+      }
+    }
+    </script>
+
+    <style>
+        ::selection {
+            background: #D4AF37;
+            color: #050505;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2C251E;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border-glow:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(18, 18, 18, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B89728 100%);
+            color: #050505;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #F3E5AB 50%, #D4AF37 100%);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        .image-frame {
+            position: relative;
+            padding: 8px;
+            background: linear-gradient(145deg, #2C251E, #121212);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8), inset 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+        /* Custom Before/After Slider Styling */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            user-select: none;
+            touch-action: pan-y;
+        }
+        .slider-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .slider-before {
+            width: 50%;
+            z-index: 2;
+            border-right: 2px solid #D4AF37;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.5);
+        }
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6), 0 0 15px rgba(212, 175, 55, 0.5);
+            cursor: ew-resize;
+            color: #050505;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        .floating-element {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-warmIvory font-sans antialiased overflow-x-hidden selection:bg-gold selection:text-darkBg">
+
+    <!-- Three.js Canvas Background Container -->
+    <div id="canvas-container" class="fixed inset-0 pointer-events-none z-0 opacity-40"></div>
+
+    <!-- FLOATING NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-[#D4AF37]/20 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Sri Veerabhadra Decors Logo -->
+            <a href="#home" class="flex items-center group" aria-label="Sri Veerabhadra Decors Home">
+                <img src="logo.png" alt="Sri Veerabhadra Decors Logo" class="w-36 sm:w-44 h-16 sm:h-20 object-contain drop-shadow-lg transition-transform duration-300 group-hover:scale-[1.03]">
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wider uppercase text-warmIvory/80">
+                <a href="#home" class="hover:text-gold transition-colors">Home</a>
+                <a href="#about" class="hover:text-gold transition-colors">About</a>
+                <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                <a href="#projects" class="hover:text-gold transition-colors">Projects</a>
+                <a href="#transformation" class="hover:text-gold transition-colors">Before & After</a>
+                <a href="#reviews" class="hover:text-gold transition-colors">Reviews</a>
+                <a href="#process" class="hover:text-gold transition-colors">Process</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- Right CTA Button -->
+            <div class="hidden sm:flex items-center">
+                <a href="https://wa.me/919840075932?text=Hello%20Sri%20Veerabhadra%20Decors,%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener noreferrer" class="gold-btn px-6 py-3 rounded-full font-semibold text-xs tracking-widest uppercase flex items-center gap-2 shadow-xl">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gold p-2 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-nav border-b border-[#D4AF37]/30 px-6 py-6 space-y-4">
+            <a href="#home" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Home</a>
+            <a href="#about" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">About</a>
+            <a href="#services" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Services</a>
+            <a href="#projects" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Projects</a>
+            <a href="#transformation" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Before & After</a>
+            <a href="#reviews" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Reviews</a>
+            <a href="#process" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Process</a>
+            <a href="#contact" class="block text-lg font-medium hover:text-gold uppercase tracking-wider">Contact</a>
+            <div class="pt-4">
+                <a href="https://wa.me/919840075932?text=Hello%20Sri%20Veerabhadra%20Decors,%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener noreferrer" class="gold-btn w-full py-3 rounded-full font-semibold text-xs tracking-widest uppercase flex items-center justify-center gap-2 shadow-xl">
+                    Get Quote via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+        <!-- Background Image with Cinematic Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center scale-105 transition-transform duration-1000" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-darkBg via-darkBg/90 to-darkBg/70"></div>
+            <div class="absolute inset-0 bg-radial-gradient from-transparent via-darkBg/80 to-darkBg"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Column: Proprietor Portrait & Key Badges -->
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-start space-y-6">
+                <div class="image-frame rounded-2xl overflow-hidden max-w-[320px] w-full floating-element">
+                    <!-- S. Suresh Portrait -->
+                    <img src="owner.png" alt="S. Suresh - Proprietor Sri Veerabhadra Decors" class="w-full h-[380px] object-cover filter contrast-110 brightness-95">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-darkBg via-darkBg/80 to-transparent p-6 text-center">
+                        <h3 class="font-editorial text-2xl font-bold text-warmIvory tracking-wide">S. SURESH</h3>
+                        <p class="text-xs uppercase tracking-[0.2em] text-gold font-semibold mt-1">Proprietor</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 w-full max-w-[320px]">
+                    <div class="glass-card p-4 rounded-xl text-center border-[#D4AF37]/30">
+                        <span class="block font-editorial text-2xl font-bold text-gold">30+</span>
+                        <span class="text-[10px] tracking-wider uppercase text-warmIvory/70">Years Exp</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center border-[#D4AF37]/30">
+                        <span class="block font-editorial text-2xl font-bold text-gold">450+</span>
+                        <span class="text-[10px] tracking-wider uppercase text-warmIvory/70">Projects</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center border-[#D4AF37]/30">
+                        <span class="block font-editorial text-2xl font-bold text-gold">TN</span>
+                        <span class="text-[10px] tracking-wider uppercase text-warmIvory/70">Service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Cinematic Headings & Brand Philosophy -->
+            <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-[#D4AF37]/40 text-gold text-xs tracking-[0.3em] uppercase">
+                    <span>Transforming Spaces</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                    <span>Chennai</span>
+                </div>
+
+                <h1 class="font-editorial text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-none uppercase">
+                    BEFORE <br>
+                    <span class="gold-gradient-text">&amp;</span> AFTER
+                </h1>
+
+                <p class="text-lg sm:text-xl text-warmIvory/80 font-light tracking-wide max-w-xl">
+                    Quality • Trust • Perfection. Delivering high-end architectural painting, texture finishes, and luxury interiors across Tamil Nadu.
+                </p>
+
+                <div class="pt-2 font-signature text-4xl sm:text-5xl text-gold/90">
+                    "Your Dream Space, Our Expert Hands"
+                </div>
+
+                <div class="pt-6 flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#transformation" class="gold-btn px-8 py-4 rounded-full font-semibold text-xs tracking-[0.2em] uppercase shadow-2xl">
+                        Explore Transformations
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-full font-semibold text-xs tracking-[0.2em] uppercase border border-[#D4AF37]/40 text-warmIvory hover:border-gold hover:bg-gold/10 transition-all">
+                        Book Consultation
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STATISTICS SECTION -->
+    <section class="py-20 relative bg-darkCard border-y border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-2xl text-center border-[#D4AF37]/30 hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                    <span class="block font-editorial text-5xl lg:text-6xl font-bold gold-gradient-text mb-2">30+</span>
+                    <span class="text-xs tracking-[0.25em] uppercase text-warmIvory/80 font-medium">Years Experience</span>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center border-[#D4AF37]/30 hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                    <span class="block font-editorial text-5xl lg:text-6xl font-bold gold-gradient-text mb-2">450+</span>
+                    <span class="text-xs tracking-[0.25em] uppercase text-warmIvory/80 font-medium">Projects Completed</span>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center border-[#D4AF37]/30 hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                    <span class="block font-editorial text-5xl lg:text-6xl font-bold gold-gradient-text mb-2">100%</span>
+                    <span class="text-xs tracking-[0.25em] uppercase text-warmIvory/80 font-medium">Commitment to Quality</span>
+                </div>
+                <div class="glass-card p-8 rounded-2xl text-center border-[#D4AF37]/30 hover:border-gold transition-all duration-300 transform hover:-translate-y-1">
+                    <span class="block font-editorial text-5xl lg:text-6xl font-bold gold-gradient-text mb-2">TN</span>
+                    <span class="text-xs tracking-[0.25em] uppercase text-warmIvory/80 font-medium">We Serve All Areas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATION SECTION (BEFORE & AFTER SLIDER) -->
+    <section id="transformation" class="py-24 relative overflow-hidden bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Transforming Spaces</span>
+                <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3 mb-4">Before &amp; After</h2>
+                <p class="text-warmIvory/70 tracking-wide">Your real before-and-after decor transformation, presented with an interactive slider.</p>
+            </div>
+
+            <!-- Before / After Interactive Slider (Using Identical Room Geometry / Camera Angle) -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl">
+                <div class="slider-container" id="ba-slider">
+                    <!-- AFTER IMAGE: full background layer -->
+                    <div class="slider-image" id="ba-after" style="background-image: url('after-decor-final.png');"></div>
+
+                    <!-- BEFORE IMAGE: clipped from the left so BEFORE is always on the left and AFTER on the right -->
+                    <div class="slider-image slider-before" id="ba-before" style="background-image: url('before-decor-final.png');"></div>
+
+                    <!-- Draggable Handle -->
+                    <div class="slider-handle" id="ba-handle" aria-label="Drag to compare before and after">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12H3m0 0 3-3m-3 3 3 3M16 12h5m0 0-3-3m3 3-3 3"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proprietor Badge Under Slider -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 p-6 glass-card rounded-2xl border-[#D4AF37]/30 max-w-xl mx-auto text-center sm:text-left">
+                <img src="owner.png" alt="S. Suresh" class="w-16 h-16 rounded-full object-cover border-2 border-gold shadow-md">
+                <div>
+                    <h4 class="font-editorial text-xl font-bold text-warmIvory">S. SURESH — PROPRIETOR</h4>
+                    <p class="text-xs tracking-widest text-gold uppercase mt-1">30+ Years of Experience • 450+ Projects Completed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 relative bg-darkCard border-t border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Master Craftsmanship</span>
+                <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3 mb-4">Crafted For Every Surface.</h2>
+                <p class="text-warmIvory/70 tracking-wide">From foundational wall protection to exquisite luxury finishes, we deliver elite-grade execution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">01</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Painting Works</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Interior and exterior premium painting using world-class emulsions for a rich, flawless finish.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">02</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Acrylic Putty</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Precision wall smoothing and crack-bridging with high-grade acrylic putty applications.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">03</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Roller Designs</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Sophisticated patterned wall rollers creating unique visual depth and aesthetic texture.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">04</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Spray Texture</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Modern automated spray texturing for uniform, durable, and striking architectural elevation walls.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">05</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">All Texture Works</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Italian marble finishes, metallic highlights, rustic stucco, and custom artistic wall textures.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">06</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Duco Paint</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">High-gloss, ultra-smooth automotive-grade Duco finishes for doors, cabinets, and woodwork.</p>
+                </div>
+                <!-- Service 7 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">07</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">MRF Finishes</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Premium polyurethane wood coatings providing maximum durability, scratch resistance, and mirror shine.</p>
+                </div>
+                <!-- Service 8 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">08</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Melamine Polish</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Traditional and modern wood polishes that highlight natural timber grain with heat and stain resistance.</p>
+                </div>
+                <!-- Service 9 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">09</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Waterproof Roof Coating</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Advanced elastomeric waterproofing membranes protecting terraces against seepage and weathering.</p>
+                </div>
+                <!-- Service 10 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">10</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Civil Work</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Structural modifications, plastering, tiling, and comprehensive renovation civil services.</p>
+                </div>
+                <!-- Service 11 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/20 gold-border-glow transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                    <span class="font-editorial text-4xl font-bold gold-gradient-text block mb-4">11</span>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3 group-hover:text-gold transition-colors">Interior Work</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Complete turnkey interior design execution, false ceilings, custom cabinetry, and decorative lighting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS PORTFOLIO -->
+    <section id="projects" class="py-24 relative bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Architectural Portfolio</span>
+                    <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3">450+ Projects.<br>One Signature Standard.</h2>
+                </div>
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+                    <button class="px-4 py-2 rounded-full text-xs uppercase tracking-wider gold-btn font-semibold filter-btn" data-filter="all">All</button>
+                    <button class="px-4 py-2 rounded-full text-xs uppercase tracking-wider glass-card text-warmIvory/80 hover:text-gold filter-btn" data-filter="residential">Residential</button>
+                    <button class="px-4 py-2 rounded-full text-xs uppercase tracking-wider glass-card text-warmIvory/80 hover:text-gold filter-btn" data-filter="interior">Interior</button>
+                    <button class="px-4 py-2 rounded-full text-xs uppercase tracking-wider glass-card text-warmIvory/80 hover:text-gold filter-btn" data-filter="texture">Texture</button>
+                </div>
+            </div>
+
+            <!-- Asymmetric Grid Portfolio -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-[#D4AF37]/30 group portfolio-item" data-category="residential">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Luxury Villa Painting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs tracking-widest text-gold uppercase font-semibold">Residential • Kolathur</span>
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory mt-1">Modern Luxury Villa Exterior</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-[#D4AF37]/30 group portfolio-item md:translate-y-8" data-category="interior">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop" alt="Living Room Interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs tracking-widest text-gold uppercase font-semibold">Interior • Anna Nagar</span>
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory mt-1">Executive Living &amp; Woodwork</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-[#D4AF37]/30 group portfolio-item" data-category="texture">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop" alt="Wall Texture Finish" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs tracking-widest text-gold uppercase font-semibold">Texture • Velachery</span>
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory mt-1">Italian Stucco &amp; Spray Finish</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-[#D4AF37]/30 group portfolio-item" data-category="residential">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop" alt="Duplex Residence" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs tracking-widest text-gold uppercase font-semibold">Residential • Tambaram</span>
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory mt-1">Grand Duplex Complete Painting</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-[#D4AF37]/30 group portfolio-item md:translate-y-8" data-category="interior">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" alt="Penthouse Interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs tracking-widest text-gold uppercase font-semibold">Interior • Porur</span>
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory mt-1">Penthouse MRF &amp; Duco Polish</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="glass-card rounded-2xl overflow-hidden border-[#D4AF37]/30 group portfolio-item" data-category="texture">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1000&auto=format&fit=crop" alt="Elevation Texture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="text-xs tracking-widest text-gold uppercase font-semibold">Texture • Avadi</span>
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory mt-1">Architectural Elevation Spray Texture</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / FOUNDER SECTION -->
+    <section id="about" class="py-24 relative bg-darkCard border-y border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="image-frame rounded-2xl overflow-hidden max-w-[400px] w-full">
+                        <img src="owner.png" alt="S. Suresh - Proprietor" class="w-full h-[450px] object-cover filter contrast-110">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-darkBg via-darkBg/90 to-transparent p-6 text-center">
+                            <h3 class="font-editorial text-2xl font-bold text-warmIvory">S. SURESH</h3>
+                            <p class="text-xs uppercase tracking-[0.2em] text-gold font-semibold mt-1">Proprietor, Sri Veerabhadra Decors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Experience You Can See. Quality You Can Trust.</span>
+                    <h2 class="font-editorial text-4xl sm:text-5xl font-bold uppercase">Decades of Uncompromising Mastership</h2>
+                    <p class="text-warmIvory/80 leading-relaxed text-base sm:text-lg">
+                        Led by S. Suresh with over 30 years of hands-on expertise, <strong class="text-gold font-semibold">Sri Veerabhadra Decors</strong> has successfully delivered 450+ high-end residential, commercial, and interior projects across Chennai and Tamil Nadu.
+                    </p>
+                    <p class="text-warmIvory/70 leading-relaxed">
+                        Our mastery spans specialized painting, textured wall art, advanced waterproofing, bespoke carpentry finishes (Duco, MRF, Melamine), and rigorous civil renovation works. Every project is executed with absolute precision and elite material standards.
+                    </p>
+                    <div class="pt-4 border-t border-[#D4AF37]/20 flex items-center justify-between">
+                        <div>
+                            <span class="font-signature text-3xl sm:text-4xl text-gold block">S. Suresh</span>
+                            <span class="text-xs uppercase tracking-widest text-warmIvory/60 mt-1 block">Proprietor, Sri Veerabhadra Decors</span>
+                        </div>
+                        <div class="w-16 h-16 rounded-full border border-gold/40 flex items-center justify-center bg-darkBg text-gold font-editorial font-bold text-xl">
+                            30+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-24 relative bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">The Standard of Excellence</span>
+                <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3 mb-4">Why Choose Us</h2>
+                <p class="text-warmIvory/70 tracking-wide">Built on a foundation of integrity, precision craftsmanship, and absolute customer satisfaction.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 hover:border-gold transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold mb-6 text-lg">01</div>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3">30+ Years Experience</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Decades of practical industry knowledge solving complex architectural painting and finishing challenges.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 hover:border-gold transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold mb-6 text-lg">02</div>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3">450+ Projects</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Extensive project execution across luxurious villas, apartments, and commercial spaces throughout Tamil Nadu.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 hover:border-gold transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold mb-6 text-lg">03</div>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3">Premium Finish</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Uncompromising attention to surface preparation, edge sharpness, smoothness, and lighting interaction.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 hover:border-gold transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold mb-6 text-lg">04</div>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3">Skilled Workmanship</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Experienced professional execution teams trained under direct supervision of S. Suresh.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 hover:border-gold transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold mb-6 text-lg">05</div>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3">Quality Materials</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Only top-tier paints, putties, and chemical compounds selected specifically for each application.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 hover:border-gold transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold font-bold mb-6 text-lg">06</div>
+                    <h3 class="font-editorial text-2xl font-bold text-warmIvory mb-3">Trusted Service</h3>
+                    <p class="text-sm text-warmIvory/70 leading-relaxed">Long-term customer relationships built on transparent pricing, punctuality, and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS TIMELINE -->
+    <section id="process" class="py-24 relative bg-darkCard border-t border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Step-by-Step Execution</span>
+                <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3 mb-4">Our Cinematic Process</h2>
+                <p class="text-warmIvory/70 tracking-wide">A seamless, disciplined methodology from initial consultation to final inspection.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">01</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Consultation</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Discussing your aesthetic vision, space requirements, and timeline.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">02</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Site Inspection</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Thorough evaluation of surface condition, moisture levels, and scope.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">03</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Color &amp; Material Selection</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Expert guidance on premium shades, textures, and finish compounds.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">04</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Detailed Quotation</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Transparent, itemized estimate with zero hidden costs or surprises.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">05</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Surface Preparation</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Sanding, putty smoothing, priming, and waterproofing protection.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">06</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Painting &amp; Finishing</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Master application of textures, coats, and polishing with precision.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl border-[#D4AF37]/30 relative md:col-span-2 lg:col-span-2">
+                    <span class="font-editorial text-3xl font-bold gold-gradient-text block mb-3">07</span>
+                    <h3 class="font-editorial text-xl font-bold text-warmIvory mb-2">Final Inspection</h3>
+                    <p class="text-xs text-warmIvory/70 leading-relaxed">Rigorous quality check, spot detailing, and pristine site cleanup before handoff.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="py-24 relative bg-darkBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Client Testimonials</span>
+                <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3 mb-4">Trusted By Clients</h2>
+                <p class="text-warmIvory/70 tracking-wide">What homeowners and architects say about our execution standards.</p>
+                <div class="mt-4 inline-block bg-gold/10 border border-gold/30 px-4 py-1.5 rounded-full text-[11px] text-gold tracking-wider uppercase">
+                    * Sample Reviews for Design Purposes
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4">★★★★★</div>
+                        <p class="text-sm text-warmIvory/80 leading-relaxed italic mb-6">"Suresh and his team transformed our duplex in Kolathur with exquisite wall textures and flawless painting. Absolute thorough professionals!"</p>
+                    </div>
+                    <div>
+                        <h4 class="font-editorial text-lg font-bold text-warmIvory">Aravind Kumar</h4>
+                        <span class="text-xs text-gold uppercase tracking-widest">Chennai</span>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4">★★★★★</div>
+                        <p class="text-sm text-warmIvory/80 leading-relaxed italic mb-6">"The MRF wood polish and Duco finish on our cabinets look like mirror glass. Outstanding attention to detail and very polite team."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-editorial text-lg font-bold text-warmIvory">Priya Lakshmi</h4>
+                        <span class="text-xs text-gold uppercase tracking-widest">Tambaram</span>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4">★★★★★</div>
+                        <p class="text-sm text-warmIvory/80 leading-relaxed italic mb-6">"Their terrace waterproofing stopped our seepage issues instantly before the monsoon. Highly dependable and expert workmanship."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-editorial text-lg font-bold text-warmIvory">Karthikeyan R</h4>
+                        <span class="text-xs text-gold uppercase tracking-widest">Avadi</span>
+                    </div>
+                </div>
+                <!-- Review 4 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4">★★★★★</div>
+                        <p class="text-sm text-warmIvory/80 leading-relaxed italic mb-6">"We hired them for complete interior painting and putty work in Anna Nagar. Finished ahead of schedule with zero mess left behind."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-editorial text-lg font-bold text-warmIvory">S. Vignesh</h4>
+                        <span class="text-xs text-gold uppercase tracking-widest">Anna Nagar</span>
+                    </div>
+                </div>
+                <!-- Review 5 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4">★★★★★</div>
+                        <p class="text-sm text-warmIvory/80 leading-relaxed italic mb-6">"30 years of experience truly shows in their execution. The spray texture on our villa elevation is stunning."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-editorial text-lg font-bold text-warmIvory">Meenakshi S</h4>
+                        <span class="text-xs text-gold uppercase tracking-widest">Velachery</span>
+                    </div>
+                </div>
+                <!-- Review 6 -->
+                <div class="glass-card p-8 rounded-2xl border-[#D4AF37]/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold mb-4">★★★★★</div>
+                        <p class="text-sm text-warmIvory/80 leading-relaxed italic mb-6">"Transparent quotation and honest guidance from Suresh sir. Best painting contractor in Chennai without a doubt."</p>
+                    </div>
+                    <div>
+                        <h4 class="font-editorial text-lg font-bold text-warmIvory">Dinesh Raj</h4>
+                        <span class="text-xs text-gold uppercase tracking-widest">Porur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE FORM SECTION -->
+    <section id="contact" class="py-24 relative bg-darkCard border-t border-[#D4AF37]/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Start Your Project</span>
+                <h2 class="font-editorial text-4xl sm:text-6xl font-bold uppercase mt-3 mb-4">Request A Quotation</h2>
+                <p class="text-warmIvory/70 tracking-wide">Fill out the details below to instantly send your requirement directly to S. Suresh via WhatsApp.</p>
+            </div>
+
+            <form id="quote-form" class="glass-card p-8 sm:p-12 rounded-3xl border-[#D4AF37]/30 shadow-2xl space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Full Name *</label>
+                        <input type="text" id="q-name" required class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="Enter your full name">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Phone Number *</label>
+                        <input type="tel" id="q-phone" required class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="Enter your phone number">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">WhatsApp Number *</label>
+                        <input type="tel" id="q-whatsapp" required class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="Enter your WhatsApp number">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Location / Area in Chennai *</label>
+                        <input type="text" id="q-location" required class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="e.g. Kolathur, Anna Nagar">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Property Type *</label>
+                        <select id="q-property" required class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors">
+                            <option value="Residential Villa / House">Residential Villa / House</option>
+                            <option value="Apartment / Flat">Apartment / Flat</option>
+                            <option value="Commercial Space">Commercial Space</option>
+                            <option value="Interior Renovation">Interior Renovation</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Service Required *</label>
+                        <select id="q-service" required class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors">
+                            <option value="Painting Works">Painting Works</option>
+                            <option value="Acrylic Putty">Acrylic Putty</option>
+                            <option value="Wall Textures">Wall Textures</option>
+                            <option value="Wood Polish (MRF / Duco / Melamine)">Wood Polish (MRF / Duco / Melamine)</option>
+                            <option value="Waterproofing">Waterproofing</option>
+                            <option value="Civil & Interior Works">Civil &amp; Interior Works</option>
+                            <option value="Complete Package">Complete Package</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Approximate Area</label>
+                        <input type="text" id="q-area" class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="e.g. 1500 sq.ft">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Number of Rooms</label>
+                        <input type="text" id="q-rooms" class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="e.g. 3 BHK">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Preferred Date</label>
+                        <input type="date" id="q-date" class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">Additional Message / Details</label>
+                    <textarea id="q-message" rows="4" class="w-full bg-darkBg border border-[#D4AF37]/30 rounded-xl px-4 py-3.5 text-warmIvory focus:border-gold focus:outline-none transition-colors" placeholder="Describe your project requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="gold-btn w-full py-4 rounded-xl font-bold text-sm tracking-[0.2em] uppercase shadow-2xl flex items-center justify-center gap-3">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    Request My Quote via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION INFO -->
+    <section class="py-24 relative bg-darkBg border-t border-[#D4AF37]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Get In Touch</span>
+                        <h2 class="font-editorial text-4xl sm:text-5xl font-bold uppercase mt-3">Sri Veerabhadra Decors</h2>
+                        <p class="text-warmIvory/70 mt-2">S. Suresh — Proprietor</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs tracking-widest text-gold uppercase font-semibold">Call Us</h4>
+                                <p class="text-warmIvory text-lg font-medium mt-1"><a href="tel:9840075932" class="hover:text-gold transition-colors">98400 75932</a> / <a href="tel:9941364345" class="hover:text-gold transition-colors">99413 64345</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs tracking-widest text-gold uppercase font-semibold">WhatsApp</h4>
+                                <p class="text-warmIvory text-lg font-medium mt-1"><a href="https://wa.me/919840075932" target="_blank" class="hover:text-gold transition-colors">98400 75932</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs tracking-widest text-gold uppercase font-semibold">Email</h4>
+                                <p class="text-warmIvory text-lg font-medium mt-1"><a href="mailto:sriveerabhadra.s7@gmail.com" class="hover:text-gold transition-colors">sriveerabhadra.s7@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs tracking-widest text-gold uppercase font-semibold">Address</h4>
+                                <p class="text-warmIvory text-sm leading-relaxed mt-1">#2/46, 13th Cross Street, Senthil Nagar, II Main Road, Kolathur, Chennai - 600 099</p>
+                                <p class="text-xs text-gold mt-1">Service Area: Kolathur, Chennai &amp; surrounding Tamil Nadu areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="glass-card p-4 rounded-3xl border-[#D4AF37]/30 h-[450px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.00693514782!2d80.2013!3d13.1226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5264843b01633d%3A0xcf9582236528828b!2sKolathur%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; border-radius:1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="py-24 relative overflow-hidden bg-darkCard border-t border-[#D4AF37]/20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-darkCard/90 to-darkBg"></div>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
+            <span class="text-xs tracking-[0.3em] uppercase text-gold font-semibold">Transform Your Property</span>
+            <h2 class="font-editorial text-4xl sm:text-7xl font-bold uppercase tracking-tight">
+                Build Your Dream Space<br>
+                <span class="gold-gradient-text">With Our Expertise</span>
+            </h2>
+            <p class="text-warmIvory/80 max-w-2xl mx-auto text-lg">
+                Experience 30+ years of unmatched mastery in painting, textures, and luxury interiors. Contact S. Suresh today.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#contact" class="gold-btn px-8 py-4 rounded-full font-semibold text-xs tracking-[0.2em] uppercase shadow-2xl">
+                    Request My Quote
+                </a>
+                <a href="tel:9840075932" class="px-8 py-4 rounded-full font-semibold text-xs tracking-[0.2em] uppercase border border-[#D4AF37]/40 text-warmIvory hover:border-gold hover:bg-gold/10 transition-all">
+                    Call Now: 98400 75932
+                </a>
+                <a href="https://wa.me/919840075932" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full font-semibold text-xs tracking-[0.2em] uppercase bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-xl">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkBg border-t border-[#D4AF37]/20 py-16 text-warmIvory/70">
+        <!-- Footer Brand Logo -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex justify-center">
+            <a href="#home" aria-label="Sri Veerabhadra Decors Home" class="group inline-flex items-center justify-center">
+                <img src="logo.png"
+                     alt="Sri Veerabhadra Decors Logo"
+                     class="w-64 sm:w-80 h-40 sm:h-48 object-contain drop-shadow-[0_10px_30px_rgba(212,175,55,0.18)] transition-transform duration-500 group-hover:scale-[1.03]">
+            </a>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- Col 1: Logo & Info -->
+            <div class="space-y-4 md:col-span-1">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="Sri Veerabhadra Decors Logo" class="w-48 h-28 object-contain drop-shadow-lg">
+                </div>
+                <p class="text-xs leading-relaxed">Professional Painting &amp; Contractor Services led by S. Suresh. 30+ Years of Experience, 450+ Projects Completed.</p>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div>
+                <h4 class="text-xs uppercase tracking-widest text-gold font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-gold transition-colors">About Us</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Services</a></li>
+                    <li><a href="#projects" class="hover:text-gold transition-colors">Portfolio</a></li>
+                    <li><a href="#transformation" class="hover:text-gold transition-colors">Before &amp; After</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Services -->
+            <div>
+                <h4 class="text-xs uppercase tracking-widest text-gold font-semibold mb-4">Core Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#services" class="hover:text-gold transition-colors">Painting &amp; Putty</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Wall Textures &amp; Spray</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">MRF, Duco &amp; Melamine</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Waterproofing</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Civil &amp; Interior Work</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact Summary -->
+            <div class="space-y-3">
+                <h4 class="text-xs uppercase tracking-widest text-gold font-semibold mb-4">Contact Info</h4>
+                <p class="text-xs">#2/46, 13th Cross Street, Senthil Nagar, Kolathur, Chennai - 600099</p>
+                <p class="text-xs">Phone: 98400 75932 / 99413 64345</p>
+                <p class="text-xs">Email: sriveerabhadra.s7@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-[#D4AF37]/10 flex flex-col sm:flex-row items-center justify-between text-xs text-warmIvory/50">
+            <p>&copy; 2026 Sri Veerabhadra Decors. All Rights Reserved.</p>
+            <p class="mt-2 sm:mt-0">Crafted with Luxury &amp; Precision for S. Suresh</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Navbar Glass Effect on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-2xl', 'bg-darkBg/95');
+            } else {
+                navbar.classList.remove('shadow-2xl', 'bg-darkBg/95');
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // 3. Before / After Interactive Slider Logic
+        const slider = document.getElementById('ba-slider');
+        const beforeImg = document.getElementById('ba-before');
+        const handle = document.getElementById('ba-handle');
+
+        let isDragging = false;
+
+        function updateSlider(clientX) {
+            const rect = slider.getBoundingClientRect();
+            let x = clientX - rect.left;
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            let percentage = (x / rect.width) * 100;
+            // Keep BEFORE on the left and AFTER on the right.
+            beforeImg.style.width = percentage + '%';
+            handle.style.left = percentage + '%';
+        }
+
+        handle.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            updateSlider(e.clientX);
+        });
+
+        // Touch support for slider
+        handle.addEventListener('touchstart', () => isDragging = true);
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        // Click on slider to jump
+        slider.addEventListener('click', (e) => {
+            updateSlider(e.clientX);
+        });
+
+        // 4. Portfolio Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('gold-btn');
+                    b.classList.add('glass-card', 'text-warmIvory/80');
+                });
+                btn.classList.remove('glass-card', 'text-warmIvory/80');
+                btn.classList.add('gold-btn');
+
+                const filter = btn.getAttribute('data-filter');
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 5. WhatsApp Quote Form Submission
+        const quoteForm = document.getElementById('quote-form');
+        quoteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('q-name').value;
+            const phone = document.getElementById('q-phone').value;
+            const whatsapp = document.getElementById('q-whatsapp').value;
+            const location = document.getElementById('q-location').value;
+            const property = document.getElementById('q-property').value;
+            const service = document.getElementById('q-service').value;
+            const area = document.getElementById('q-area').value || 'Not specified';
+            const rooms = document.getElementById('q-rooms').value || 'Not specified';
+            const date = document.getElementById('q-date').value || 'Flexible';
+            const message = document.getElementById('q-message').value || 'None';
+
+            const formattedMessage = 
+`SRI VEERABHADRA DECORS
+NEW QUOTE REQUEST
+
+Name: ${name}
+Phone: ${phone}
+WhatsApp: ${whatsapp}
+Location: ${location}
+Property Type: ${property}
+Service Required: ${service}
+Approximate Area: ${area}
+Number of Rooms: ${rooms}
+Preferred Date: ${date}
+Message: ${message}
+
+Please contact the customer regarding this enquiry.`;
+
+            const encodedURL = `https://wa.me/919840075932?text=${encodeURIComponent(formattedMessage)}`;
+            window.open(encodedURL, '_blank');
+        });
+
+        // 6. Three.js Background Subtle Floating Gold Particles
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 350;
+        const posArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 15;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const material = new THREE.PointsMaterial({
+            size: 0.03,
+            color: 0xD4AF37,
+            transparent: true,
+            opacity: 0.6
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+
+        camera.position.z = 4;
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+        window.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX / window.innerWidth - 0.5;
+            mouseY = event.clientY / window.innerHeight - 0.5;
+        });
+
+        const clock = new THREE.Clock();
+
+        changeAnim = function() {
+            requestAnimationFrame(changeAnim);
+            const elapsedTime = clock.getElapsedTime();
+
+            particlesMesh.rotation.y = elapsedTime * 0.03 + mouseX * 0.3;
+            particlesMesh.rotation.x = elapsedTime * 0.02 + mouseY * 0.3;
+
+            renderer.render(scene, camera);
+        }
+        changeAnim();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
